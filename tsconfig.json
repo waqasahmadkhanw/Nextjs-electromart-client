@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/shared/api/upload.ts", "src/shared/api/response.ts"  ],
   "exclude": ["node_modules"]
 }
