@@ -11,7 +11,7 @@ const HeroBanner = () => {
         href="/products"
         className="group relative overflow-hidden rounded-2xl"
       >
-        <div className="relative h-56 w-full">
+        {/* <div className="relative h-56 w-full">
           <Image
             src="/images/banners/banner-01.jpg"
             alt="Summer Sale"
@@ -19,8 +19,8 @@ const HeroBanner = () => {
             priority
             className="object-cover transition-transform duration-500 group-hover:scale-105 "
           />
-        </div>
-           {/* <div className="relative h-56 w-full">
+        </div> */}
+           <div className="relative h-56 w-full">
           <Image
             src="/images/banners/banner-02.jpg"
             alt="New Collection"
@@ -28,7 +28,7 @@ const HeroBanner = () => {
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-        </div> */}
+        </div>
 
         <div className="absolute inset-0 bg-gradient-to-red from-black/70 via-black/30 to-transparent" />
 
