@@ -10,12 +10,12 @@ export interface ForgotPasswordFormValues {
 
 interface ForgotPasswordFormProps {
   isLoading?: boolean;
-  onSubmit: (values: ForgotPasswordFormValues) => void;
+  onSubmit?: (values: ForgotPasswordFormValues) => void;
 }
 
 export default function ForgotPasswordForm({
   isLoading = false,
-  onSubmit,
+  onSubmit = () => {},
 }: ForgotPasswordFormProps) {
   const {
     register,

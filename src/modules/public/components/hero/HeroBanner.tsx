@@ -17,11 +17,20 @@ const HeroBanner = () => {
             alt="Summer Sale"
             fill
             priority
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-105 "
           />
         </div>
+           {/* <div className="relative h-56 w-full">
+          <Image
+            src="/images/banners/banner-02.jpg"
+            alt="New Collection"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div> */}
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-red from-black/70 via-black/30 to-transparent" />
 
         <div className="absolute left-6 top-1/2 -translate-y-1/2 text-white">
           <p className="mb-2 text-sm font-medium uppercase tracking-wider">
@@ -52,7 +61,7 @@ const HeroBanner = () => {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-red from-black/70 via-black/30 to-transparent" />
 
         <div className="absolute left-6 top-1/2 -translate-y-1/2 text-white">
           <p className="mb-2 text-sm font-medium uppercase tracking-wider">

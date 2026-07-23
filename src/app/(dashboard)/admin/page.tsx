@@ -1,5 +1,8 @@
-import { AdminDashboardPage } from "@/modules/dashboard";
-
-export default function Page() {
-  return <AdminDashboardPage />;
+export default function AdminPage() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+      <p className="mt-2 text-muted-foreground">Welcome to the admin dashboard.</p>
+    </div>
+  );
 }

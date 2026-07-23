@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { MainLayout } from "@/shared/layouts";
+import { Header, Footer } from "@/modules/public/components";
 
 interface PublicLayoutProps {
   children: ReactNode;
@@ -9,8 +9,10 @@ export default function PublicLayout({
   children,
 }: PublicLayoutProps) {
   return (
-    <MainLayout>
-      {children}
-    </MainLayout>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </div>
   );
 }

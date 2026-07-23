@@ -15,12 +15,12 @@ export interface RegisterFormValues {
 
 interface RegisterFormProps {
   isLoading?: boolean;
-  onSubmit: (values: RegisterFormValues) => void;
+  onSubmit?: (values: RegisterFormValues) => void;
 }
 
 export default function RegisterForm({
   isLoading = false,
-  onSubmit,
+  onSubmit = () => {},
 }: RegisterFormProps) {
   const {
     register,

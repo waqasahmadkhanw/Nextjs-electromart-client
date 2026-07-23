@@ -1,6 +1,10 @@
-import HeroNavigation from "./08.HeroNavigation";
-import HeroIndicators from "./09.HeroIndicators";
-import { HERO_SLIDES } from "./10.hero.data";
+"use client";
+
+import HeroNavigation from "./HeroNavigation";
+import HeroIndicators from "./HeroIndicators";
+import { HERO_SLIDES } from "./hero.data";
+import { useState } from "react";
+import HeroSlide from "./HeroSlide";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

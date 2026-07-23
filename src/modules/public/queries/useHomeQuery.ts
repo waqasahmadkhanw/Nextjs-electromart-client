@@ -8,7 +8,7 @@ export const useHomeQuery = () => {
     queryKey: ["public-home"],
 
     queryFn: () =>
-      publicService.getHomeData(),
+      publicService.getHome(),
 
     staleTime: 1000 * 60 * 5,
   });

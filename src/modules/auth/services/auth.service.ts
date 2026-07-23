@@ -1,15 +1,24 @@
-import { authApi } from "../api/auth.api";
+import {
+  loginApi,
+  registerApi,
+  forgotPasswordApi,
+  resetPasswordApi,
+  verifyEmailApi,
+  logoutApi,
+  refreshTokenApi,
+  currentUserApi,
+} from "../api/auth.api";
 
 export const authService = {
-  login: authApi.login,
-  register: authApi.register,
-  forgotPassword: authApi.forgotPassword,
-  resetPassword: authApi.resetPassword,
-  verifyEmail: authApi.verifyEmail,
-  logout: authApi.logout,
-  refreshToken: authApi.refreshToken,
-  getCurrentUser: authApi.getCurrentUser,
-  getSession: authApi.getSession,
-  getPermissions: authApi.getPermissions,
-  getRoles: authApi.getRoles,
+  login: loginApi,
+  register: registerApi,
+  forgotPassword: forgotPasswordApi,
+  resetPassword: resetPasswordApi,
+  verifyEmail: verifyEmailApi,
+  logout: logoutApi,
+  refreshToken: refreshTokenApi,
+  getCurrentUser: currentUserApi,
+  getSession: currentUserApi,
+  getPermissions: currentUserApi,
+  getRoles: currentUserApi,
 };

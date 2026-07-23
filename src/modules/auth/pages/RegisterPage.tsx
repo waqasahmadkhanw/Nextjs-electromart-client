@@ -1,11 +1,4 @@
-import { Metadata } from "next";
-
 import { RegisterForm } from "../components";
-
-export const metadata: Metadata = {
-  title: "Create Account",
-  description: "Create a new account to get started.",
-};
 
 export default function RegisterPage() {
   return (

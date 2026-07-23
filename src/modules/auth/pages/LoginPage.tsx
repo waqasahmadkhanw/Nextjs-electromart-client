@@ -1,11 +1,4 @@
-import { Metadata } from "next";
-
 import { LoginForm } from "../components";
-
-export const metadata: Metadata = {
-  title: "Login",
-  description: "Sign in to your account.",
-};
 
 export default function LoginPage() {
   return (

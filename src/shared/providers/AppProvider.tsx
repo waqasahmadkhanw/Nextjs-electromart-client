@@ -14,6 +14,8 @@ import { ReactNode } from "react";
 import QueryProvider from "./QueryProvider";
 import ReduxProvider from "./ReduxProvider";
 import ThemeProvider from "./ThemeProvider";
+import { ToastProvider } from "@/shared/components/ui/Toast/toast.store";
+import { ToastContainer } from "@/shared/components/ui/Toast/Toast";
 
 interface AppProviderProps {
   children: ReactNode;
@@ -25,7 +27,12 @@ export default function AppProvider({
   return (
     <ReduxProvider>
       <QueryProvider>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ToastProvider>
+            {children}
+            <ToastContainer />
+          </ToastProvider>
+        </ThemeProvider>
       </QueryProvider>
     </ReduxProvider>
   );

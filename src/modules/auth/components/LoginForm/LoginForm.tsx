@@ -14,12 +14,12 @@ interface LoginFormValues {
 
 interface LoginFormProps {
   isLoading?: boolean;
-  onSubmit: (values: LoginFormValues) => void;
+  onSubmit?: (values: LoginFormValues) => void;
 }
 
 export default function LoginForm({
   isLoading = false,
-  onSubmit,
+  onSubmit = () => {},
 }: LoginFormProps) {
   const {
     register,

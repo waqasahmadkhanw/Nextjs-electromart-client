@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import { FooterNewsletter } from "./FooterNewsletter";
+import FooterNewsletter from "./FooterNewsletter";
 
 const FooterTop: FC = () => {
   return (

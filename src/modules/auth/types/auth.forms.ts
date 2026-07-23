@@ -56,6 +56,12 @@ export interface ChangePasswordFormValues {
   confirmPassword: string;
 }
 
+// Alias for hook compatibility
+export type ChangePasswordRequest = ChangePasswordFormValues;
+
+// Alias for hook compatibility
+export type UpdateProfileRequest = UpdateProfileFormValues;
+
 // ============================================
 // Update Profile Form
 // ============================================

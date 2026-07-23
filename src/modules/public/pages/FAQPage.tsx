@@ -1,19 +1,17 @@
-// import {
-//   PageHeader,
-//   FAQList,
-// } from "../components";
-
-import FAQList from "../components/faq/FAQList";
-import PageHeader from "../components/PageHeader";
+import { PageHeader } from "../components";
+import { FAQList } from "../components/faq";
 
 export default function FAQPage() {
   return (
     <>
       <PageHeader
         title="Frequently Asked Questions"
+        description="Find answers to common questions about our products and services."
       />
 
-      <FAQList />
+      <section className="container mx-auto px-4 py-12">
+        <FAQList />
+      </section>
     </>
   );
 }

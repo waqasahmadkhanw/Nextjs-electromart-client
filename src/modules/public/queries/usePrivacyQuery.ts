@@ -8,7 +8,7 @@ export const usePrivacyQuery = () => {
     queryKey: ["public-privacy"],
 
     queryFn: () =>
-      publicService.getPrivacyData(),
+      publicService.getPrivacy(),
   });
 
 };

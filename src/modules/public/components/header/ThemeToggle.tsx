@@ -18,7 +18,7 @@ const ThemeToggle = () => {
       <button
         type="button"
         aria-label="Toggle Theme"
-        className="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 bg-white"
+        className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-background"
       >
         <Sun className="h-5 w-5 opacity-0" />
       </button>
@@ -36,7 +36,7 @@ const ThemeToggle = () => {
       type="button"
       onClick={handleToggle}
       aria-label="Toggle Theme"
-      className="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 bg-white transition-all duration-200 hover:border-primary hover:bg-gray-50"
+className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-background transition-all duration-200 hover:border-primary hover:bg-muted"
     >
       {isDark ? (
         <Sun className="h-5 w-5" />

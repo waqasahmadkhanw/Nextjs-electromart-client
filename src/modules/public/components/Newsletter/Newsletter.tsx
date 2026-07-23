@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { Input } from "@/shared/components/ui/Input";
+import { Button } from "@/shared/components/ui/Button";
 import { useNewsletterMutation } from "../../mutations";
+import { useToast } from "@/shared/components/ui/Toast/useToast";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
-
   const { mutate, isPending } = useNewsletterMutation();
+  const toast = useToast();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,6 +21,10 @@ export default function Newsletter() {
       {
         onSuccess: () => {
           setEmail("");
+          toast.success("Subscribed successfully!", "You're now on our mailing list.");
+        },
+        onError: () => {
+          toast.error("Subscription failed", "Please try again later.");
         },
       }
     );
@@ -26,33 +33,34 @@ export default function Newsletter() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-5xl rounded-2xl p-8 text-center">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold tracking-tight">
           Subscribe to our newsletter
         </h2>
 
-        <p className="mt-3">
+        <p className="mt-3 text-muted-foreground">
           Get updates, news and latest information.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="mt-6 flex flex-col gap-4 sm:flex-row"
+          className="mx-auto mt-6 flex max-w-md flex-col gap-4 sm:flex-row"
         >
-          <input
+          <Input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="flex-1 rounded-lg border px-4 py-3"
+            className="flex-1"
+            required
           />
 
-          <button
+          <Button
             type="submit"
-            disabled={isPending}
-            className="rounded-lg px-6 py-3"
+            variant="primary"
+            loading={isPending}
           >
-            {isPending ? "Submitting..." : "Subscribe"}
-          </button>
+            {isPending ? "Subscribing..." : "Subscribe"}
+          </Button>
         </form>
       </div>
     </section>

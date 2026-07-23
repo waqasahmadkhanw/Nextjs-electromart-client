@@ -2,6 +2,7 @@
 import {
   Control,
   Controller,
+  ControllerRenderProps,
   FieldPath,
   FieldValues,
 } from 'react-hook-form';
@@ -9,13 +10,7 @@ import {
 interface FormFieldProps<T extends FieldValues> {
   name: FieldPath<T>;
   control: Control<T>;
-  render: (field: {
-    value: unknown;
-    onChange: (...event: unknown[]) => void;
-    onBlur: () => void;
-    name: string;
-    ref: React.Ref<unknown>;
-  }) => React.ReactNode;
+  render: (field: ControllerRenderProps<T>) => React.ReactNode;
 }
 
 export function FormField<T extends FieldValues>({
@@ -27,7 +22,7 @@ export function FormField<T extends FieldValues>({
     <Controller
       name={name}
       control={control}
-      render={({ field }) => render(field)}
+      render={({ field }) => render(field) as React.ReactElement}
     />
   );
 }

@@ -42,7 +42,7 @@ export async function refreshAccessToken(): Promise<string> {
       accessToken: string;
       refreshToken?: string;
     }>(
-      `${env.API_BASE_URL}/auth/refresh-token`,
+      `${env.API_URL}/auth/refresh-token`,
       {
         refreshToken,
       },

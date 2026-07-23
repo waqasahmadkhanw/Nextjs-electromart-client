@@ -1,5 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { cn } from "@/shared/lib/cn";
 
 interface FAQItem {
   id: number;
@@ -44,35 +47,52 @@ export default function FAQList({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="mx-auto max-w-3xl space-y-4">
       {items.map((item) => (
         <div
           key={item.id}
-          className="rounded-lg border"
+          className={cn(
+            "overflow-hidden rounded-xl border transition-all duration-200",
+            activeId === item.id && "border-primary/30 shadow-sm"
+          )}
         >
           <button
             type="button"
             onClick={() => toggleFAQ(item.id)}
-            className="flex w-full items-center justify-between p-4 text-left"
+            className={cn(
+              "flex w-full items-center justify-between px-6 py-4 text-left transition-colors",
+              "hover:bg-gray-50 dark:hover:bg-gray-800/50",
+              activeId === item.id && "bg-gray-50/50 dark:bg-gray-800/30"
+            )}
+            aria-expanded={activeId === item.id}
+            aria-controls={`faq-answer-${item.id}`}
           >
-            <span className="font-medium">
+            <span className="pr-4 font-medium text-gray-900 dark:text-gray-100">
               {item.question}
             </span>
 
             <ChevronDown
-              className={`h-5 w-5 transition-transform ${
-                activeId === item.id
-                  ? "rotate-180"
-                  : ""
-              }`}
+              className={cn(
+                "h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200",
+                activeId === item.id && "rotate-180 text-primary"
+              )}
             />
           </button>
 
-          {activeId === item.id && (
-            <div className="border-t p-4 text-sm text-gray-600">
+          <div
+            id={`faq-answer-${item.id}`}
+            role="region"
+            className={cn(
+              "overflow-hidden transition-all duration-200",
+              activeId === item.id
+                ? "max-h-96 opacity-100"
+                : "max-h-0 opacity-0"
+            )}
+          >
+            <div className="border-t px-6 py-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               {item.answer}
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>

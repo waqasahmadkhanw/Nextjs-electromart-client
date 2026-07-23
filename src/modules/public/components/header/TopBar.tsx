@@ -5,16 +5,16 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const TopBar = () => {
   return (
-    <div className="hidden border-b bg-gray-50 lg:block">
+    <div className="hidden border-b border-border bg-muted lg:block">
       <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4">
         {/* Left Section */}
-        <div className="flex items-center gap-6 text-sm text-gray-600">
+        <div className="flex items-center gap-6 text-sm text-muted-foreground">
           <Link
-            href="tel:+1234567890"
+            href="tel:+923441683991"
             className="flex items-center gap-2 transition-colors hover:text-primary"
           >
             <Phone className="h-4 w-4" />
-            <span>+1 (234) 567-890</span>
+            <span>+923441683991</span>
           </Link>
 
           <Link
@@ -35,21 +35,21 @@ const TopBar = () => {
         <div className="flex items-center gap-5 text-sm">
           <Link
             href="/track-order"
-            className="text-gray-600 transition-colors hover:text-primary"
+            className="text-muted-foreground transition-colors hover:text-primary"
           >
             Track Order
           </Link>
 
           <Link
             href="/help"
-            className="text-gray-600 transition-colors hover:text-primary"
+            className="text-muted-foreground transition-colors hover:text-primary"
           >
             Help Center
           </Link>
 
           <Link
             href="/contact"
-            className="text-gray-600 transition-colors hover:text-primary"
+            className="text-muted-foreground transition-colors hover:text-primary"
           >
             Contact
           </Link>

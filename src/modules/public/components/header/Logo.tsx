@@ -16,7 +16,7 @@ const Logo = ({
   href = "/",
   src = "/images/logo.png",
   alt = "Logo",
-  width = 160,
+  width = 40,
   height = 40,
   priority = true,
 }: LogoProps) => {
@@ -32,7 +32,7 @@ const Logo = ({
         width={width}
         height={height}
         priority={priority}
-        className="h-auto w-auto object-contain"
+        className="h-auto w-auto object-contain rounded-full"
       />
     </Link>
   );

@@ -1,10 +1,11 @@
 import type { FC } from "react";
 
-import { FooterBrand } from "./FooterBrand";
-import { FooterLinks } from "./FooterLinks";
-import { FooterContact } from "./FooterContact";
-import { FooterSocial } from "./FooterSocial";
-import { FooterPayments } from "./FooterPayments";
+import FooterBrand from "./FooterBrand";
+// import FooterLinks from "./FooterLinks";
+import FooterContact from "./FooterContact";
+import FooterSocial from "./FooterSocial";
+import FooterPayments from "./FooterPayments";
+import FooterLinks from "./FooterLinks";
 
 const FooterMiddle: FC = () => {
   return (
@@ -20,9 +21,25 @@ const FooterMiddle: FC = () => {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <FooterBrand />
 
-          <FooterLinks />
+          <FooterLinks
+            title="Shop"
+            links={[
+              { label: "Products", href: "/products" },
+              { label: "Categories", href: "/categories" },
+              { label: "Deals", href: "/deals" },
+              { label: "New Arrivals", href: "/new-arrivals" },
+            ]}
+          />
 
-          <FooterLinks />
+          <FooterLinks
+            title="Support"
+            links={[
+              { label: "Help Center", href: "/help" },
+              { label: "Shipping Info", href: "/shipping" },
+              { label: "Returns", href: "/returns" },
+              { label: "Contact Us", href: "/contact" },
+            ]}
+          />
 
           <div className="space-y-8">
             <FooterContact />

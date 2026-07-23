@@ -34,7 +34,7 @@ export const useChangePasswordMutation = (): UseMutationResult<
     Error,
     ChangePasswordRequest
   >({
-    mutationFn: changePassword,
+    mutationFn: changePassword as (data: ChangePasswordRequest) => Promise<ChangePasswordResponse>,
   });
 };
 

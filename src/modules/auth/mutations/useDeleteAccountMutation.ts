@@ -34,7 +34,7 @@ export const useDeleteAccountMutation = (): UseMutationResult<
     Error,
     DeleteAccountRequest
   >({
-    mutationFn: deleteAccount,
+    mutationFn: deleteAccount as (data: DeleteAccountRequest) => Promise<DeleteAccountResponse>,
   });
 };
 

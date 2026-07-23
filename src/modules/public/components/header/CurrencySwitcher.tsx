@@ -31,7 +31,7 @@ const CurrencySwitcher = ({
         value={value}
         onChange={handleChange}
         aria-label="Select Currency"
-        className="h-11 rounded-lg border border-gray-200 bg-white px-4 pr-8 text-sm font-medium outline-none transition-all hover:border-primary focus:border-primary"
+className="h-11 rounded-lg border border-border bg-background px-4 pr-8 text-sm font-medium outline-none transition-all hover:border-primary focus:border-primary"
       >
         {options.map((currency) => (
           <option

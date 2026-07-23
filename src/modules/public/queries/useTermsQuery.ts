@@ -8,7 +8,7 @@ export const useTermsQuery = () => {
     queryKey: ["public-terms"],
 
     queryFn: () =>
-      publicService.getTermsData(),
+      publicService.getTerms(),
   });
 
 };

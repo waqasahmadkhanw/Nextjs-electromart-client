@@ -34,7 +34,7 @@ export const useUpdateProfileMutation = (): UseMutationResult<
     Error,
     UpdateProfileRequest
   >({
-    mutationFn: updateProfile,
+    mutationFn: updateProfile as (data: UpdateProfileRequest) => Promise<UpdateProfileResponse>,
   });
 };
 

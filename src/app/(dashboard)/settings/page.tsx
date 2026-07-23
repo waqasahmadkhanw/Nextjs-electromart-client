@@ -1,5 +1,8 @@
-import { SettingsPage } from "@/modules/settings";
-
-export default function Page() {
-  return <SettingsPage />;
+export default function SettingsPage() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Settings</h1>
+      <p className="mt-2 text-muted-foreground">Manage your application settings.</p>
+    </div>
+  );
 }

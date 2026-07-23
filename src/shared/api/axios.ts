@@ -9,7 +9,7 @@ import axios, {
 import { env } from "@/shared/config/env";
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: env.API_BASE_URL,
+  baseURL: env.API_URL,
   timeout: 30000,
   withCredentials: true,
   headers: {

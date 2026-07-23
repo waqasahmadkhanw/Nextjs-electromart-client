@@ -3,7 +3,7 @@
 import { useMutation, UseMutationResult } from '@tanstack/react-query';
 
 import { logout } from '../services';
-import type { ApiResponse } from '@/shared/types';
+import type { LogoutResponse } from '../types';
 
 /**
  * Logout Mutation
@@ -22,12 +22,12 @@ import type { ApiResponse } from '@/shared/types';
  * Backend API
  */
 export const useLogoutMutation = (): UseMutationResult<
-  ApiResponse,
+  LogoutResponse,
   Error,
   void
 > => {
-  return useMutation<ApiResponse, Error, void>({
-    mutationFn: logout,
+  return useMutation<LogoutResponse, Error, void>({
+    mutationFn: logout as () => Promise<LogoutResponse>,
   });
 };
 

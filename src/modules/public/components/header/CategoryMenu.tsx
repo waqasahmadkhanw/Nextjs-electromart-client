@@ -18,7 +18,7 @@ const CategoryMenu = () => {
       {/* Trigger */}
       <button
         type="button"
-        className="flex h-11 items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 text-sm font-medium transition hover:bg-gray-50"
+        className="flex h-11 items-center gap-2 rounded-lg border border-border bg-background px-4 text-sm font-medium transition hover:bg-muted"
       >
         <Grid2X2 className="h-5 w-5" />
 
@@ -33,18 +33,18 @@ const CategoryMenu = () => {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-xl border border-gray-200 bg-white p-2 shadow-xl">
+        <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-xl border border-border bg-background p-2 shadow-xl">
           <ul className="space-y-1">
             {categoryLinks.map((category) => (
               <li key={category.href}>
                 <Link
                   href={category.href}
-                  className="flex items-center justify-between rounded-lg px-4 py-3 text-sm transition hover:bg-gray-100"
+                  className="flex items-center justify-between rounded-lg px-4 py-3 text-sm text-muted-foreground transition hover:bg-muted"
                 >
                   <span>{category.label}</span>
 
                   {category.count && (
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-muted-foreground">
                       {category.count}
                     </span>
                   )}

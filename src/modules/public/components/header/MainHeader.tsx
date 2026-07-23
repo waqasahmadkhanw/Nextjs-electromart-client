@@ -9,7 +9,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const MainHeader = () => {
   return (
-    <div className="border-b bg-white">
+    <div className="border-b border-border bg-background">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4">
         {/* Logo */}
         <div className="flex shrink-0 items-center">

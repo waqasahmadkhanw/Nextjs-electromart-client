@@ -7,7 +7,7 @@ export const useRefreshToken = () => {
   const mutation = useRefreshTokenMutation();
 
   const refreshToken = useCallback(
-    async (payload?: RefreshTokenRequest) => {
+    async (payload: RefreshTokenRequest) => {
       return mutation.mutateAsync(payload);
     },
     [mutation]

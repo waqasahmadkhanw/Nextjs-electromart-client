@@ -8,7 +8,7 @@ export const useAboutQuery = () => {
     queryKey: ["public-about"],
 
     queryFn: () =>
-      publicService.getAboutData(),
+      publicService.getAbout(),
 
     staleTime: 1000 * 60 * 10,
   });

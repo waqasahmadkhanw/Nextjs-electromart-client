@@ -11,12 +11,12 @@ export interface ResetPasswordFormValues {
 
 interface ResetPasswordFormProps {
   isLoading?: boolean;
-  onSubmit: (values: ResetPasswordFormValues) => void;
+  onSubmit?: (values: ResetPasswordFormValues) => void;
 }
 
 export default function ResetPasswordForm({
   isLoading = false,
-  onSubmit,
+  onSubmit = () => {},
 }: ResetPasswordFormProps) {
   const {
     register,

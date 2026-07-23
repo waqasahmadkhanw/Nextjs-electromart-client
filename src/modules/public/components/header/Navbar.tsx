@@ -9,7 +9,7 @@ import { navigationLinks } from "./header.data";
 
 const Navbar = () => {
   return (
-    <nav className="border-b bg-white">
+    <nav className="border-b border-border bg-background">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
         {/* Left */}
         <div className="flex items-center gap-4">
@@ -30,7 +30,7 @@ const Navbar = () => {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Mobile Categories Button */}
         <button
           type="button"
-          className="flex items-center gap-2 text-sm font-medium lg:hidden"
+          className="flex items-center gap-2 text-sm font-medium text-muted-foreground lg:hidden"
           aria-label="Browse Categories"
         >
           <Menu className="h-5 w-5" />

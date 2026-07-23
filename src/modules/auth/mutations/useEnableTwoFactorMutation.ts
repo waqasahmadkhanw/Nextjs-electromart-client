@@ -34,7 +34,7 @@ export const useEnableTwoFactorMutation = (): UseMutationResult<
     Error,
     EnableTwoFactorRequest
   >({
-    mutationFn: enableTwoFactor,
+    mutationFn: enableTwoFactor as (data: EnableTwoFactorRequest) => Promise<EnableTwoFactorResponse>,
   });
 };
 

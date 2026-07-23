@@ -11,13 +11,13 @@ export interface VerifyEmailFormValues {
 interface VerifyEmailFormProps {
   isLoading?: boolean;
   email?: string;
-  onSubmit: (values: VerifyEmailFormValues) => void;
+  onSubmit?: (values: VerifyEmailFormValues) => void;
 }
 
 export default function VerifyEmailForm({
   isLoading = false,
   email,
-  onSubmit,
+  onSubmit = () => {},
 }: VerifyEmailFormProps) {
   const {
     handleSubmit,

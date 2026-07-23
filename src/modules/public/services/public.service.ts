@@ -2,36 +2,36 @@ import { publicApi } from "../api";
 
 export const publicService = {
 
-  getHomeData: async () => {
-    const data = await publicApi.getHomeData();
+  getHome: async () => {
+    const data = await publicApi.getHome();
 
     return data;
   },
 
 
-  getAboutData: async () => {
-    const data = await publicApi.getAboutData();
+  getAbout: async () => {
+    const data = await publicApi.getAbout();
 
     return data;
   },
 
 
-  getFAQData: async () => {
-    const data = await publicApi.getFAQData();
+  getFAQ: async () => {
+    const data = await publicApi.getFAQ();
 
     return data;
   },
 
 
-  getTermsData: async () => {
-    const data = await publicApi.getTermsData();
+  getTerms: async () => {
+    const data = await publicApi.getTerms();
 
     return data;
   },
 
 
-  getPrivacyData: async () => {
-    const data = await publicApi.getPrivacyData();
+  getPrivacy: async () => {
+    const data = await publicApi.getPrivacy();
 
     return data;
   },

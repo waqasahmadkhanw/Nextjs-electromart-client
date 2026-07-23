@@ -34,7 +34,7 @@ export const useResendVerificationMutation = (): UseMutationResult<
     Error,
     ResendVerificationRequest
   >({
-    mutationFn: resendVerification,
+    mutationFn: resendVerification as () => Promise<ResendVerificationResponse>,
   });
 };
 

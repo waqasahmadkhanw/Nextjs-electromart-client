@@ -1,17 +1,17 @@
 import {
   contactApi,
-  ContactRequest,
+  ContactPayload,
 } from "../api";
 
 
 export const contactService = {
 
   sendMessage: async (
-    payload: ContactRequest
+    payload: ContactPayload
   ) => {
 
     const response =
-      await contactApi.submit(payload);
+      await contactApi.sendMessage(payload);
 
 
     return response;

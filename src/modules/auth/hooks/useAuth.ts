@@ -12,9 +12,13 @@ export const useAuth = () => {
   const user = useCurrentUser();
   const isAuthenticated = useIsAuthenticated();
 
-  const { accessToken, refreshToken, isLoading } = useAppSelector(
+  const authState = useAppSelector(
     (state) => state.auth
   );
+
+  const isLoading = authState.status === "loading";
+  const accessToken = authState.accessToken;
+  const refreshToken = authState.refreshToken;
 
   const handleLogout = () => {
     dispatch(logout());

@@ -34,7 +34,7 @@ export const useUploadAvatarMutation = (): UseMutationResult<
     Error,
     UploadAvatarRequest
   >({
-    mutationFn: uploadAvatar,
+    mutationFn: uploadAvatar as (data: UploadAvatarRequest) => Promise<UploadAvatarResponse>,
   });
 };
 

@@ -14,7 +14,7 @@ const CartButton = ({
     <Link
       href="/cart"
       aria-label="Shopping Cart"
-      className="relative flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200 bg-white transition-all hover:border-primary hover:bg-gray-50"
+      className="relative flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-background transition-all hover:border-primary hover:bg-muted"
     >
       <ShoppingCart className="h-5 w-5" />
 

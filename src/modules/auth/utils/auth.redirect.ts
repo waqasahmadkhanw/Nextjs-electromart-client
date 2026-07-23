@@ -42,7 +42,7 @@ export const getLoginRedirect = (
  */
 export const getDashboardRedirect = (
   role?: UserRole
-): string {
+): string => {
   switch (role) {
     case "super-admin":
       return "/dashboard/super-admin";
@@ -106,7 +106,7 @@ export const getUnauthorizedRedirect = (): string => {
  */
 export const getUnauthenticatedRedirect = (
   callbackUrl?: string
-): string {
+): string => {
   if (!callbackUrl) {
     return "/login";
   }
@@ -115,3 +115,4 @@ export const getUnauthenticatedRedirect = (
     callbackUrl
   )}`;
 }
+

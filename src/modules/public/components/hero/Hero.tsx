@@ -1,7 +1,7 @@
 "use client";
 
-import HeroSlider from "./02.HeroSlider";
-import HeroBanner from "./07.HeroBanner";
+import HeroSlider from "./HeroSlider";
+import HeroBanner from "./HeroBanner";
 
 const Hero = () => {
   return (

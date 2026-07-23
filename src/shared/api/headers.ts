@@ -8,12 +8,12 @@
  * -------------------------------------------------------
  */
 
-import type { AxiosRequestHeaders } from "axios";
+type HeaderRecord = Record<string, string>;
 
 /**
  * Default JSON Headers
  */
-export const DEFAULT_HEADERS: AxiosRequestHeaders = {
+export const DEFAULT_HEADERS: Record<string, string> = {
   Accept: "application/json",
   "Content-Type": "application/json",
 };
@@ -23,7 +23,7 @@ export const DEFAULT_HEADERS: AxiosRequestHeaders = {
  */
 export const getAuthorizationHeader = (
   token?: string | null
-): AxiosRequestHeaders => {
+): Record<string, string> => {
   if (!token) {
     return {};
   }
@@ -38,8 +38,9 @@ export const getAuthorizationHeader = (
  */
 export const getJsonHeaders = (
   token?: string | null
-): AxiosRequestHeaders => ({
-  ...DEFAULT_HEADERS,
+): Record<string, string> => ({
+  "Content-Type": "application/json",
+  Accept: "application/json",
   ...getAuthorizationHeader(token),
 });
 
@@ -48,7 +49,7 @@ export const getJsonHeaders = (
  */
 export const getMultipartHeaders = (
   token?: string | null
-): AxiosRequestHeaders => ({
+): Record<string, string> => ({
   Accept: "application/json",
   "Content-Type": "multipart/form-data",
   ...getAuthorizationHeader(token),
@@ -59,7 +60,7 @@ export const getMultipartHeaders = (
  */
 export const getDownloadHeaders = (
   token?: string | null
-): AxiosRequestHeaders => ({
+): Record<string, string> => ({
   Accept: "*/*",
   ...getAuthorizationHeader(token),
 });
@@ -68,7 +69,7 @@ export const getDownloadHeaders = (
  * Merge Multiple Header Objects
  */
 export const mergeHeaders = (
-  ...headers: AxiosRequestHeaders[]
-): AxiosRequestHeaders => ({
+  ...headers: Record<string, string>[]
+): Record<string, string> => ({
   ...Object.assign({}, ...headers),
 });

@@ -8,7 +8,7 @@ export const useFAQQuery = () => {
     queryKey: ["public-faq"],
 
     queryFn: () =>
-      publicService.getFAQData(),
+      publicService.getFAQ(),
 
     staleTime: 1000 * 60 * 30,
   });

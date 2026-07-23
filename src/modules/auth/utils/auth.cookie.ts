@@ -111,5 +111,5 @@ export const deleteCookie = (
 export const deleteCookies = (
   names: string[]
 ): void => {
-  names.forEach(deleteCookie);
+  names.forEach((name) => deleteCookie(name));
 };

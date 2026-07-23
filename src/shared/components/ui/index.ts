@@ -25,8 +25,8 @@ export * from "./Input";
 // Label
 export * from "./Label";
 
-// Modal
-export * from "./Modal";
+// Modal (re-exported from overlay)
+// export * from "./Modal";
 
 // Progress
 export * from "./Progress";
@@ -51,6 +51,9 @@ export * from "./Tabs";
 
 // Textarea
 export * from "./Textarea";
+
+// Toast (TUI)
+export * from "./Toast";
 
 // Tooltip
 export * from "./Tooltip";

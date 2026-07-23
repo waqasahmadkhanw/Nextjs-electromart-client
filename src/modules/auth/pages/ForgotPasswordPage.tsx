@@ -1,11 +1,4 @@
-import { Metadata } from "next";
-
 import { ForgotPasswordForm } from "../components";
-
-export const metadata: Metadata = {
-  title: "Forgot Password",
-  description: "Request a password reset link to regain access to your account.",
-};
 
 export default function ForgotPasswordPage() {
   return (

@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { Input } from "@/shared/components/ui/Input";
+import { Textarea } from "@/shared/components/ui/Textarea";
+import { Button } from "@/shared/components/ui/Button";
 import { useContactMutation } from "../../mutations";
+import { useToast } from "@/shared/components/ui/Toast/useToast";
 
 interface ContactFormData {
   name: string;
@@ -22,6 +26,7 @@ export default function ContactForm() {
     useState<ContactFormData>(initialState);
 
   const { mutate, isPending } = useContactMutation();
+  const toast = useToast();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -34,7 +39,6 @@ export default function ContactForm() {
     });
   };
 
-
   const handleSubmit = (
     e: React.FormEvent<HTMLFormElement>
   ) => {
@@ -43,57 +47,66 @@ export default function ContactForm() {
     mutate(formData, {
       onSuccess: () => {
         setFormData(initialState);
+        toast.success("Message sent!", "We'll get back to you shortly.");
+      },
+      onError: () => {
+        toast.error("Failed to send", "Please try again later.");
       },
     });
   };
-
 
   return (
     <form
       onSubmit={handleSubmit}
       className="space-y-5"
     >
-      <input
+      <Input
+        label="Your Name"
         name="name"
         value={formData.name}
         onChange={handleChange}
-        placeholder="Name"
-        className="w-full rounded-lg border p-3"
+        placeholder="Enter your name"
+        required
       />
 
-      <input
+      <Input
+        label="Email Address"
         name="email"
         type="email"
         value={formData.email}
         onChange={handleChange}
-        placeholder="Email"
-        className="w-full rounded-lg border p-3"
+        placeholder="Enter your email"
+        required
       />
 
-      <input
+      <Input
+        label="Subject"
         name="subject"
         value={formData.subject}
         onChange={handleChange}
-        placeholder="Subject"
-        className="w-full rounded-lg border p-3"
+        placeholder="What is this about?"
+        required
       />
 
-      <textarea
+      <Textarea
+        label="Message"
         name="message"
         value={formData.message}
         onChange={handleChange}
-        placeholder="Message"
+        placeholder="Tell us more..."
         rows={5}
-        className="w-full rounded-lg border p-3"
+        required
       />
 
-      <button
+      <Button
         type="submit"
-        disabled={isPending}
-        className="rounded-lg px-6 py-3"
+        variant="primary"
+        size="lg"
+        loading={isPending}
+        className="w-full"
       >
         {isPending ? "Sending..." : "Send Message"}
-      </button>
+      </Button>
     </form>
   );
 }

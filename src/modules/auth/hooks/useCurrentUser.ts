@@ -2,10 +2,10 @@ import { useMemo } from "react";
 
 import { useAppSelector } from "@/shared/store";
 
-import { selectCurrentUser } from "../store";
+import { selectAuth } from "../store";
 
 export const useCurrentUser = () => {
-  const user = useAppSelector(selectCurrentUser);
+  const user = useAppSelector(selectAuth);
 
   return useMemo(() => user, [user]);
 };
