@@ -15,10 +15,13 @@ const requiredEnv = [
 
 type RequiredEnv = (typeof requiredEnv)[number];
 
-function getEnv(key: RequiredEnv): string {
+function getEnv(key: RequiredEnv, fallback?: string): string {
   const value = process.env[key];
 
   if (!value) {
+    if (fallback !== undefined) {
+      return fallback;
+    }
     throw new Error(`❌ Missing required environment variable: ${key}`);
   }
 
@@ -28,7 +31,7 @@ function getEnv(key: RequiredEnv): string {
 export const env = {
   NODE_ENV: (process.env.NODE_ENV as NodeEnv) ?? "development",
 
-  API_URL: getEnv("NEXT_PUBLIC_API_URL"),
+  API_URL: getEnv("NEXT_PUBLIC_API_URL", "http://localhost:8000/api"),
 
   IS_DEV: process.env.NODE_ENV === "development",
 

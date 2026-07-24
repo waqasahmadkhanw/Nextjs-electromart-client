@@ -19,7 +19,7 @@ const CartButton = ({
       <ShoppingCart className="h-5 w-5" />
 
       {itemCount > 0 && (
-        <span className="absolute -right-1 -top-1 flex h-5 min-w[20px] items-center justify-center rounded-full bg-primary px-1 text-[10px] font-semibold text-white">
+        <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-semibold text-white">
           {itemCount > 99 ? "99+" : itemCount}
         </span>
       )}
@@ -28,3 +28,4 @@ const CartButton = ({
 };
 
 export default CartButton;
+

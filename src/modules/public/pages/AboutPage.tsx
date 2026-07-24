@@ -1,16 +1,17 @@
-import { PageHeader } from "../components";
+import { PageHeader, AboutStory, AboutTeam, AboutValues, AboutStats } from "../components";
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
         title="About Us"
-        description="Learn more about our company."
+        description="Learn more about our company, our team, and what makes us tick."
       />
 
-      <section>
-        About content
-      </section>
+      <AboutStory />
+      <AboutStats />
+      <AboutValues />
+      <AboutTeam />
     </>
   );
 }

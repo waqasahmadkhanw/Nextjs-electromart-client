@@ -22,7 +22,8 @@ export function FormField<T extends FieldValues>({
     <Controller
       name={name}
       control={control}
-      render={({ field }) => render(field) as React.ReactElement}
+      render={({ field }) => <>{render(field)}</>}
     />
   );
 }
+

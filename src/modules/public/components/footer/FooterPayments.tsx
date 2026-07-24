@@ -17,11 +17,11 @@ const paymentMethods: PaymentMethod[] = [
   },
   {
     name: "PayPal",
-    image: "/images/payments/paypal.svg",
+    image: "/images/payments/paypal.webp",
   },
   {
     name: "Stripe",
-    image: "/images/payments/stripe.svg",
+    image: "/images/stripe.svg",
   },
 ];
 

@@ -1,35 +1,20 @@
-# Industry-Standard TUI Improvements ✅
+# About Page Implementation - Task Progress
 
-## Step 1: Create Toast/Notification System (TUI)
-- [x] Create `src/shared/components/ui/Toast/Toast.tsx`
-- [x] Create `src/shared/components/ui/Toast/toast.store.ts`
-- [x] Create `src/shared/components/ui/Toast/useToast.ts`
-- [x] Create `src/shared/components/ui/Toast/index.ts`
-- [x] Add Toast provider to AppProvider
-- [x] Update UI index exports
+## Completed
+- [x] Create `src/modules/public/components/about/AboutStory.tsx`
+- [x] Create `src/modules/public/components/about/AboutTeam.tsx`
+- [x] Create `src/modules/public/components/about/AboutValues.tsx`
+- [x] Create `src/modules/public/components/about/AboutStats.tsx`
+- [x] Create `src/modules/public/components/about/index.ts`
+- [x] Edit `src/modules/public/components/index.ts` - Add about export
+- [x] Edit `src/modules/public/pages/AboutPage.tsx` - Use new components
 
-## Step 2: Fix Tailwind v4 Compatibility
-- [x] Update `src/app/globals.css` to v4 `@theme` syntax
-- [x] Fix CSS variable references
+## Bug Fixes
+- [x] Fix `FooterBrand.tsx` - changed logo path from `/images/logo.svg` to `/images/logo.png`
+- [x] Fix `FooterPayments.tsx` - fixed PayPal path to `/images/payments/paypal.webp` and Stripe path to `/images/stripe.svg`
+- [x] Fix `HeroBanner.tsx` - added missing `sizes` prop to second banner Image component
+- [x] Create `.env.local` with `NEXT_PUBLIC_API_URL=http://localhost:8000/api`
 
-## Step 3: Refactor Newsletter Component
-- [x] Update `Newsletter.tsx` to use shared Button + Input + cn() + Toast
-
-## Step 4: Refactor ContactForm
-- [x] Update `ContactForm.tsx` to use shared Input, Textarea, Button, cn() + Toast
-
-## Step 5: Polish ContactPage Layout
-- [x] Update `ContactPage.tsx` with proper Card/grid layout
-
-## Step 6: Polish FAQList
-- [x] Update `FAQList.tsx` with cn() and better transitions + layout
-
-## Step 7: Polish PageHeader
-- [x] Update `PageHeader.tsx` with cn(), variants, dark mode
-
-## Step 8: Polish FAQPage
-- [x] Update `FAQPage.tsx` with proper description + container layout
-
-## Step 9: Build & Verify
-- [x] Run `npm run build` — Compiled successfully ✅, TypeScript passed ✅
+## TODO
+- [ ] Verify build succeeds
 

@@ -1,7 +1,6 @@
 import type { FC } from "react";
 
 import FooterBrand from "./FooterBrand";
-// import FooterLinks from "./FooterLinks";
 import FooterContact from "./FooterContact";
 import FooterSocial from "./FooterSocial";
 import FooterPayments from "./FooterPayments";
@@ -54,3 +53,4 @@ const FooterMiddle: FC = () => {
 };
 
 export default FooterMiddle;
+

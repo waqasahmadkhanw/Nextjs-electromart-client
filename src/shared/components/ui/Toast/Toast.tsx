@@ -114,7 +114,7 @@ export function ToastContainer() {
   return (
     <div
       aria-label="Notifications"
-      className="pointer-events-none fixed inset-x-0 top-4 z-[9999] flex flex-col items-center gap-3 px-4 sm:top-6 sm:items-end sm:px-6"
+      className="pointer-events-none fixed inset-x-0 top-4 z-9999 flex flex-col items-center gap-3 px-4 sm:top-6 sm:items-end sm:px-6"
     >
       {toasts.map((toast) => (
         <ToastItem

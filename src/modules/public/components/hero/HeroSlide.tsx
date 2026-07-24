@@ -11,7 +11,7 @@ interface HeroSlideProps {
 
 const HeroSlide = ({ slide }: HeroSlideProps) => {
   return (
-    <article className="grid min-h[420px] grid-cols-1 items-center gap-8 p-8 md:grid-cols-2 lg:min-h[520px]">
+    <article className="grid min-h-105 grid-cols-1 items-center gap-8 p-8 md:grid-cols-2 lg:min-h-130">
       {/* Left Content */}
       <div className="space-y-6">
         <HeroContent
@@ -44,3 +44,4 @@ const HeroSlide = ({ slide }: HeroSlideProps) => {
 };
 
 export default HeroSlide;
+

@@ -1,19 +1,32 @@
-"use client"
-export default function Loading() {
+"use client";
+
+import { useEffect } from "react";
+
+type ErrorProps = {
+  error: Error & { digest?: string };
+  reset: () => void;
+};
+
+export default function ErrorPage({ error, reset }: ErrorProps) {
+  useEffect(() => {
+    console.error("Error:", error);
+  }, [error]);
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-background">
       <div className="flex flex-col items-center gap-4">
-        {/* Spinner */}
-        <div
-          className="h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-primary"
-          aria-label="Loading"
-        />
-
-        {/* Loading Text */}
+        <h2 className="text-2xl font-bold">Something went wrong!</h2>
         <p className="text-sm text-muted-foreground">
-          Loading...
+          {error.message || "An unexpected error occurred."}
         </p>
+        <button
+          onClick={reset}
+          className="rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        >
+          Try again
+        </button>
       </div>
     </main>
   );
 }
+

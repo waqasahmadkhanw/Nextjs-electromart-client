@@ -14,7 +14,7 @@ const HeroImage = ({
   priority = false,
 }: HeroImageProps) => {
   return (
-    <div className="relative mx-auto flex w-full max-w[520px] items-center justify-center">
+    <div className="relative mx-auto flex w-full max-w-130 items-center justify-center">
       <Image
         src={src}
         alt={alt}
@@ -29,3 +29,4 @@ const HeroImage = ({
 };
 
 export default HeroImage;
+

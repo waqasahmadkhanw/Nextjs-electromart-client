@@ -10,7 +10,7 @@ const contactDetails = [
   {
     id: 2,
     title: "Phone",
-    value: "+1 234 567 890",
+    value: "+923441683991",
     icon: Phone,
   },
   {

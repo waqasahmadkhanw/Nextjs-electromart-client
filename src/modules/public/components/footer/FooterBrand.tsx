@@ -14,7 +14,7 @@ const FooterBrand: FC = () => {
         className="inline-flex items-center"
       >
         <Image
-          src="/images/logo.svg"
+          src="/images/logo.png"
           alt="Company Logo"
           width={140}
           height={40}
