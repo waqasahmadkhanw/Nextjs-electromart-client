@@ -24,7 +24,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg">
+    <div className="relative overflow-hidden rounded-2xl bg-transparent">
       <HeroSlide slide={HERO_SLIDES[currentSlide]} />
 
       <HeroNavigation

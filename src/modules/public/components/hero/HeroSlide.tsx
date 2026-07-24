@@ -33,11 +33,11 @@ const HeroSlide = ({ slide }: HeroSlideProps) => {
         href={slide.primaryButton.href}
         className="flex items-center justify-center"
       >
-        <HeroImage
+        {/* <HeroImage
           src={slide.image}
           alt={slide.title}
           priority
-        />
+        /> */}
       </a>
     </article>
   );

@@ -14,16 +14,16 @@ const HeroContent = ({
   return (
     <div className="space-y-5">
       {badge && (
-        <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+        <span className="inline-flex items-center rounded-full bg-white/20 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
           {badge}
         </span>
       )}
 
-      <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+      <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
         {title}
       </h1>
 
-      <p className="max-w-xl text-base leading-7 text-gray-600 md:text-lg">
+      <p className="max-w-xl text-base leading-7 text-white/80 md:text-lg">
         {description}
       </p>
     </div>
