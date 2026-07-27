@@ -19,8 +19,8 @@ export const navigationLinks: NavigationItem[] = [
     href: "/",
   },
   {
-    id: "shop",
-    label: "Shop",
+    id: "products",
+    label: "Products",
     href: "/shop",
   },
   {
@@ -29,9 +29,35 @@ export const navigationLinks: NavigationItem[] = [
     href: "/categories",
   },
   {
+    id: "deals",
+    label: "Deals",
+    href: "/deals",
+    badge: "HOT",
+  },
+  {
+    id: "brands",
+    label: "Brands",
+    href: "/brands",
+  },
+  {
+    id: "wishlist",
+    label: "Wishlist",
+    href: "/wishlist",
+  },
+  {
     id: "about",
     label: "About",
     href: "/about",
+  },
+  {
+    id: "faq",
+    label: "FAQ",
+    href: "/faq",
+  },
+  {
+    id: "orders",
+    label: "Orders",
+    href: "/orders",
   },
   {
     id: "contact",

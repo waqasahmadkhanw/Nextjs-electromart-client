@@ -55,3 +55,31 @@ export interface HeroSliderProps {
   initialSlide?: number;
   autoPlay?: boolean;
 }
+
+// ---- New Types for Hero Redesign ----
+
+export interface TrustCard {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface ProductItem {
+  id: string;
+  name: string;
+  icon: string;
+  position: string;
+  rotate?: string;
+  size?: string;
+}
+
+export interface CustomerRating {
+  count: string;
+  rating: number;
+  reviews: string;
+  avatars: string[];
+}
+
+export interface HeroSectionProps {
+  className?: string;
+}

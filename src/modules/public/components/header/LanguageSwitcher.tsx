@@ -1,7 +1,7 @@
 "use client";
 
 import { ChangeEvent } from "react";
-import { Languages } from "lucide-react";
+import { Globe } from "lucide-react";
 
 export interface LanguageOption {
   label: string;
@@ -23,27 +23,29 @@ const LanguageSwitcher = ({
     onChange(event.target.value);
   };
 
+  const currentLang = options.find((opt) => opt.value === value);
+
   return (
     <div className="relative">
-<Languages className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-
+      <Globe className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <select
         value={value}
         onChange={handleChange}
         aria-label="Select Language"
-        className="h-11 rounded-lg border border-border bg-background py-2 pl-10 pr-8 text-sm font-medium outline-none transition-all hover:border-primary focus:border-primary"
+        className="h-11 cursor-pointer rounded-lg border border-border bg-background py-2 pl-8 pr-7 text-xs font-medium outline-none transition-all hover:border-primary focus:border-primary appearance-none"
       >
         {options.map((language) => (
-          <option
-            key={language.value}
-            value={language.value}
-          >
+          <option key={language.value} value={language.value}>
             {language.label}
           </option>
         ))}
       </select>
+      <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[8px] text-muted-foreground">
+        {currentLang?.value.toUpperCase()}
+      </span>
     </div>
   );
 };
 
 export default LanguageSwitcher;
+

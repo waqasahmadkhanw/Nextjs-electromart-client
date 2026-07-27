@@ -1,5 +1,4 @@
 import { PageHeader, ContactForm, ContactInfo } from "../components";
-import { Card, CardContent } from "@/shared/components/ui/Card";
 
 export default function ContactPage() {
   return (
@@ -7,28 +6,23 @@ export default function ContactPage() {
       <PageHeader
         title="Contact Us"
         description="Get in touch with our team. We'd love to hear from you."
+        breadcrumbs={[{ label: "Contact", href: "/contact" }]}
       />
 
-      <section className="container mx-auto px-4 py-12">
-        <div className="grid gap-10 md:grid-cols-2">
-          {/* Contact Information */}
-          <div>
-            <h2 className="mb-6 text-2xl font-bold tracking-tight">
-              Get in Touch
-            </h2>
-            <ContactInfo />
-          </div>
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-10 lg:grid-cols-5">
+            {/* Contact Information */}
+            <div className="lg:col-span-2">
+              <ContactInfo />
+            </div>
 
-          {/* Contact Form */}
-          <div>
-            <h2 className="mb-6 text-2xl font-bold tracking-tight">
-              Send us a Message
-            </h2>
-            <Card>
-              <CardContent className="p-6">
+            {/* Contact Form */}
+            <div className="lg:col-span-3">
+              <div className="rounded-2xl border border-gray-200/60 bg-white p-6 shadow-sm dark:border-gray-800/60 dark:bg-gray-950 md:p-8">
                 <ContactForm />
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>

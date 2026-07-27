@@ -1,78 +1,44 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-const HeroBanner = () => {
+interface HeroBannerProps {
+  title: string;
+  description: string;
+  href: string;
+  label: string;
+  className?: string;
+}
+
+const HeroBanner = ({
+  title,
+  description,
+  href,
+  label,
+  className = "",
+}: HeroBannerProps) => {
   return (
-    <aside className="flex h-full flex-col gap-6">
-      {/* Banner 01 */}
-      <Link
-        href="/products"
-        className="group relative overflow-hidden rounded-2xl"
-      >
-      
-           <div className="relative h-56 w-full">
-          <Image
-            src="/images/banners/banner-02.jpg"
-            alt="New Collection"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
+    <div
+      className={`group relative overflow-hidden rounded-2xl bg-linear-to-br from-blue-600 to-blue-800 p-6 text-white shadow-xl ${className}`}
+    >
+      <div className="relative z-10">
+        <h3 className="text-xl font-bold">{title}</h3>
+        <p className="mt-1 text-sm text-blue-100">{description}</p>
+        <Link
+          href={href}
+          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline underline-offset-4 transition-all hover:gap-3"
+        >
+          {label}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
 
-        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
-
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 text-white">
-          <p className="mb-2 text-sm font-medium uppercase tracking-wider">
-            Limited Offer
-          </p>
-
-          <h3 className="mb-4 text-2xl font-bold">
-            Up to 50% Off
-          </h3>
-
-          <span className="inline-flex rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black">
-            Shop Now
-          </span>
-        </div>
-      </Link>
-
-      {/* Banner 02 */}
-      <Link
-        href="/products"
-        className="group relative overflow-hidden rounded-2xl"
-      >
-        <div className="relative h-56 w-full">
-          <Image
-            src="/images/banners/banner-02.jpg"
-            alt="New Collection"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-
-        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
-
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 text-white">
-          <p className="mb-2 text-sm font-medium uppercase tracking-wider">
-            New Arrival
-          </p>
-
-          <h3 className="mb-4 text-2xl font-bold">
-            Latest Collection
-          </h3>
-
-          <span className="inline-flex rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black">
-            Explore
-          </span>
-        </div>
-      </Link>
-    </aside>
+      {/* Background decoration */}
+      <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-white/10" />
+      <div className="absolute -top-4 -right-4 h-16 w-16 rounded-full bg-white/5" />
+    </div>
   );
 };
 
 export default HeroBanner;
-
