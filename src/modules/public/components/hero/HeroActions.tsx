@@ -17,10 +17,10 @@ const HeroActions = ({
   secondaryHref,
 }: HeroActionsProps) => {
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center gap-4">
       <Link
         href={primaryHref}
-        className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-lg active:scale-95"
+        className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
       >
         {primaryLabel}
         <ArrowRight className="ml-2 h-4 w-4" />
@@ -29,7 +29,7 @@ const HeroActions = ({
       {secondaryLabel && secondaryHref && (
         <Link
           href={secondaryHref}
-          className="inline-flex items-center justify-center rounded-xl border-2 border-gray-300 bg-white px-7 py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-gray-400 hover:bg-gray-50 hover:shadow-md active:scale-95"
+          className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
         >
           {secondaryLabel}
         </Link>

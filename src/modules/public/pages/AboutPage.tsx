@@ -6,7 +6,6 @@ export default function AboutPage() {
       <PageHeader
         title="About Us"
         description="Learn more about our company, our team, and what makes us tick."
-        breadcrumbs={[{ label: "About", href: "/about" }]}
       />
 
       <AboutStory />

@@ -17,7 +17,6 @@ export interface NavigationItem {
   icon?: React.ReactNode;
   target?: "_self" | "_blank";
   disabled?: boolean;
-  badge?: "HOT" | "NEW" | "SALE";
 }
 
 /* ---------------------------------- */

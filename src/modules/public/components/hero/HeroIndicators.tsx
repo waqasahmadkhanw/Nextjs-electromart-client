@@ -12,7 +12,7 @@ const HeroIndicators = ({
   onChange,
 }: HeroIndicatorsProps) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
       {Array.from({ length: total }).map((_, index) => {
         const isActive = index === current;
 
@@ -23,10 +23,10 @@ const HeroIndicators = ({
             aria-label={`Go to slide ${index + 1}`}
             aria-current={isActive}
             onClick={() => onChange(index)}
-            className={`rounded-full transition-all duration-300 ${
+            className={`h-3 rounded-full transition-all duration-300 ${
               isActive
-                ? "h-2.5 w-6 bg-blue-600"
-                : "h-2.5 w-2.5 bg-gray-300 hover:bg-gray-400"
+                ? "w-8 bg-primary"
+                : "w-3 bg-white/70 hover:bg-white"
             }`}
           />
         );
