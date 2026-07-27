@@ -17,8 +17,18 @@ const FooterMiddle: FC = () => {
           Footer Content
         </h2>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <FooterBrand />
+
+          <FooterLinks
+            title="Quick Links"
+            links={[
+              { label: "Home", href: "/" },
+              { label: "About Us", href: "/about" },
+              { label: "Contact", href: "/contact" },
+              { label: "FAQ", href: "/faq" },
+            ]}
+          />
 
           <FooterLinks
             title="Shop"
