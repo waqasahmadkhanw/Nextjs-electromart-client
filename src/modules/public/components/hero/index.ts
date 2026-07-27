@@ -8,6 +8,11 @@ export { default as HeroActions } from "./HeroActions";
 export { default as HeroBanner } from "./HeroBanner";
 export { default as HeroNavigation } from "./HeroNavigation";
 export { default as HeroIndicators } from "./HeroIndicators";
+export { default as HeroBackground } from "./HeroBackground";
+export { default as HeroButtons } from "./HeroButtons";
+export { default as HeroProducts } from "./HeroProducts";
+export { default as HeroRating } from "./HeroRating";
+export { default as TrustCards } from "./TrustCards";
 
 // Data
 export * from "./hero.data";

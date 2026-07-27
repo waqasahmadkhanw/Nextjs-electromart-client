@@ -10,21 +10,23 @@ interface LogoProps {
   width?: number;
   height?: number;
   priority?: boolean;
+  showText?: boolean;
 }
 
 const Logo = ({
   href = "/",
   src = "/images/logo.png",
-  alt = "Logo",
+  alt = "ElectroMart",
   width = 40,
   height = 40,
   priority = true,
+  showText = true,
 }: LogoProps) => {
   return (
     <Link
       href={href}
       aria-label="Go to homepage"
-      className="inline-flex items-center"
+      className="inline-flex items-center gap-2"
     >
       <Image
         src={src}
@@ -34,8 +36,14 @@ const Logo = ({
         priority={priority}
         className="h-auto w-auto object-contain rounded-full"
       />
+      {showText && (
+        <span className="hidden text-lg font-bold text-primary sm:block">
+          ElectroMart
+        </span>
+      )}
     </Link>
   );
 };
 
 export default Logo;
+

@@ -14,19 +14,17 @@ const HeroImage = ({
   priority = false,
 }: HeroImageProps) => {
   return (
-    <div className="relative mx-auto flex w-full max-w-130 items-center justify-center">
+    <div className="relative mx-auto aspect-square w-full max-w-md">
       <Image
         src={src}
         alt={alt}
-        width={520}
-        height={520}
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
         priority={priority}
-        className="h-auto w-full object-contain transition-transform duration-300 hover:scale-105"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
+        className="object-contain"
       />
     </div>
   );
 };
 
 export default HeroImage;
-

@@ -12,15 +12,15 @@ const HeroNavigation = ({
   onNext,
 }: HeroNavigationProps) => {
   return (
-    <>
+    <div className="flex items-center gap-2">
       {/* Previous Button */}
       <button
         type="button"
         aria-label="Previous Slide"
         onClick={onPrevious}
-        className="absolute left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-md backdrop-blur transition-all duration-300 hover:scale-105 hover:bg-white"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 shadow-sm transition-all duration-200 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300 active:scale-95"
       >
-        <ChevronLeft className="h-5 w-5" />
+        <ChevronLeft className="h-4 w-4" />
       </button>
 
       {/* Next Button */}
@@ -28,11 +28,11 @@ const HeroNavigation = ({
         type="button"
         aria-label="Next Slide"
         onClick={onNext}
-        className="absolute right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-md backdrop-blur transition-all duration-300 hover:scale-105 hover:bg-white"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 shadow-sm transition-all duration-200 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300 active:scale-95"
       >
-        <ChevronRight className="h-5 w-5" />
+        <ChevronRight className="h-4 w-4" />
       </button>
-    </>
+    </div>
   );
 };
 

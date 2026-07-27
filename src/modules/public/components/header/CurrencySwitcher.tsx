@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent } from "react";
+import { DollarSign } from "lucide-react";
 
 export interface CurrencyOption {
   label: string;
@@ -19,29 +20,30 @@ const CurrencySwitcher = ({
   options,
   onChange,
 }: CurrencySwitcherProps) => {
-  const handleChange = (
-    event: ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value);
   };
 
+  const currentCurrency = options.find((opt) => opt.value === value);
+
   return (
     <div className="relative">
+      <DollarSign className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <select
         value={value}
         onChange={handleChange}
         aria-label="Select Currency"
-className="h-11 rounded-lg border border-border bg-background px-4 pr-8 text-sm font-medium outline-none transition-all hover:border-primary focus:border-primary"
+        className="h-11 cursor-pointer rounded-lg border border-border bg-background py-2 pl-8 pr-7 text-xs font-medium outline-none transition-all hover:border-primary focus:border-primary appearance-none"
       >
         {options.map((currency) => (
-          <option
-            key={currency.value}
-            value={currency.value}
-          >
+          <option key={currency.value} value={currency.value}>
             {currency.symbol} {currency.label}
           </option>
         ))}
       </select>
+      <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[8px] font-semibold text-muted-foreground">
+        {currentCurrency?.value}
+      </span>
     </div>
   );
 };
